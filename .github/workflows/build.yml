@@ -1,4 +1,4 @@
-name: Build Docker arm64 image on release
+name: Build Docker multiarch image on release
 
 on:
   push:
@@ -9,7 +9,7 @@ env:
   IMAGE_NAME: ${{ github.repository }}
 
 jobs:
-  build-and-push-image-arm64:
+  build-and-push-image-multiarch:
     runs-on: ubuntu-22.04
     permissions:
       contents: read
@@ -38,7 +38,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v4.1.1
         with:
-          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME_ARM64 }}
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
           # Docker tags based on the following events/attributes
           tags: |
             type=schedule
