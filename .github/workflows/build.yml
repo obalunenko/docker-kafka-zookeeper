@@ -2,7 +2,9 @@ name: Build Docker multiarch image on release
 
 on:
   push:
-    tags: ['v*']
+    branches:
+      - 'main'
+  workflow_dispatch:
 
 env:
   REGISTRY: ghcr.io
@@ -34,28 +36,9 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Extract metadata (tags, labels) for Docker
-        id: meta
-        uses: docker/metadata-action@v4.1.1
-        with:
-          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
-          # Docker tags based on the following events/attributes
-          tags: |
-            type=schedule
-            type=ref,event=branch
-            type=ref,event=pr
-            type=semver,pattern={{raw}}
-            type=semver,pattern={{version}}
-            type=semver,pattern={{major}}.{{minor}}
-            type=semver,pattern={{major}}
-            type=sha
-
       - name: Build and push Docker images
-        uses: docker/build-push-action@v3.2.0
+        uses: docker/bake-action@v2.3.0
         with:
-          context: .
-          file: Dockerfile
           push: true
-          platforms: 'linux/arm64,linux/amd64'
-          tags: ${{ steps.meta.outputs.tags }}
-          labels: ${{ steps.meta.outputs.labels }}
+          files: 'docker-bake.hcl'
+
