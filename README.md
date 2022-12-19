@@ -4,8 +4,7 @@
 
 Forked from [hey-johnnypark/docker-kafka-zookeeper](https://github.com/hey-johnnypark/docker-kafka-zookeeper).
 
-## Versions
-
+## Kafka Versions
 
 ### latest
 
@@ -49,6 +48,28 @@ ZOOKEEPER_VERSION 3.4.13
 SCALA_VERSION 2.13
 
 
+### v2.8.2
+
+`docker pull ghcr.io/obalunenko/docker-kafka-zookeeper:v2.8.2`
+
+KAFKA_VERSION 2.8.2
+
+ZOOKEEPER_VERSION 3.4.13
+
+SCALA_VERSION 2.13
+
+
+### v2.7.0
+
+`docker pull ghcr.io/obalunenko/docker-kafka-zookeeper:v2.7.0`
+
+KAFKA_VERSION 2.7.0
+
+ZOOKEEPER_VERSION 3.4.13
+
+SCALA_VERSION 2.13
+
+
 ### v2.6.0
 
 `docker pull ghcr.io/obalunenko/docker-kafka-zookeeper:v2.6.0`
@@ -58,7 +79,6 @@ KAFKA_VERSION 2.6.0
 ZOOKEEPER_VERSION 3.4.13
 
 SCALA_VERSION 2.13
-
 
 
 ## Docker pool instuctions
