@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-docker build --no-cache .
+REGISTRY="" docker buildx bake --file docker-bake.hcl
