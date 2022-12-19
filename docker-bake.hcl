@@ -55,7 +55,6 @@ target "kafka-3_3_1" {
     inherits = ["kafka_base"]
     args = {
         KAFKA_VERSION="3.3.1",
-        ZOOKEEPER_VERSION="3.6.3"
     }
     tags = [
         "${IMAGE_WITH_REGISTRY}:3.3.1",
@@ -76,7 +75,6 @@ target "kafka-latest" {
     inherits = ["kafka_base"]
     args = {
         KAFKA_VERSION="3.3.1",
-        ZOOKEEPER_VERSION="3.8.0"
     }
     tags = [
         "${IMAGE_WITH_REGISTRY}:latest",
