@@ -6,11 +6,33 @@ Forked from [hey-johnnypark/docker-kafka-zookeeper](https://github.com/hey-johnn
 
 ## Versions
 
+
+### latest
+
+`docker pull ghcr.io/obalunenko/docker-kafka-zookeeper:latest`
+
+KAFKA_VERSION 3.3.1
+
+ZOOKEEPER_VERSION 3.4.13
+
+SCALA_VERSION 2.13
+
+### stable
+
+`docker pull ghcr.io/obalunenko/docker-kafka-zookeeper:stable`
+
+KAFKA_VERSION 3.3.1
+
+ZOOKEEPER_VERSION 3.4.13
+
+SCALA_VERSION 2.13
+
+
 ### v3.3.1
 
-`docker pull ghcr.io/obalunenko/docker-kafka-zookeeper:v3.3.3`
+`docker pull ghcr.io/obalunenko/docker-kafka-zookeeper:v3.3.1`
 
-KAFKA_VERSION 3.3.3
+KAFKA_VERSION 3.3.1
 
 ZOOKEEPER_VERSION 3.4.13
 
