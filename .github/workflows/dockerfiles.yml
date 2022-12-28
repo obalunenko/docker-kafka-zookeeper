@@ -1,0 +1,42 @@
+name: Dockerfiles [lint]
+
+on:
+  push:
+    branches:
+      - "main"
+  pull_request:
+    types: [opened, synchronize, reopened]
+    branches:
+      - "*"
+    paths:
+      - "!**"
+      - "Dockerfile"
+      - ".github/workflows/dockerfiles.yml"
+
+jobs:
+  lint-dockerfiles:
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix:
+        dockerfile:
+          [
+            "./Dockerfile",
+          ]
+    runs-on: "ubuntu-22.04"
+    name: Lint ${{ matrix.dockerfile }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Lint
+        uses: hadolint/hadolint-action@v3.0.0
+        with:
+          dockerfile: ${{ matrix.dockerfile }}
+          recursive: false
+          no-color: false
+          no-fail: false
+          format: tty
+          
