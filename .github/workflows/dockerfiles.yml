@@ -32,11 +32,7 @@ jobs:
           fetch-depth: 0
 
       - name: Lint
-        uses: hadolint/hadolint-action@v3.0.0
+        uses: jbergstroem/hadolint-gh-action@v1
         with:
           dockerfile: ${{ matrix.dockerfile }}
-          recursive: false
-          no-color: false
-          no-fail: false
-          format: tty
-          
+          annotate: true
