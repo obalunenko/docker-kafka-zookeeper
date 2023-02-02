@@ -1,6 +1,6 @@
 # Docker Kafka & Zookeeper
 
-> 📦 Docker image bundling Kafka & Zookeeper into a single container
+> 📦 Docker image bundling Kafka & Zookeeper into a single container, powered by docker bake to support different versions of Kafka and zookeeper.
 
 Forked from [hey-johnnypark/docker-kafka-zookeeper](https://github.com/hey-johnnypark/docker-kafka-zookeeper).
 
