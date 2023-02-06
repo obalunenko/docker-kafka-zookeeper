@@ -1,11 +1,16 @@
 # Kafka and Zookeeper
 FROM alpine:3.17
 
+ARG APK_OPENJDK8_VERSION=~8
+ARG APK_SUPERVISOR_VERSION=~4
+ARG APK_BASH_VERSION=~5
+ARG APK_GCOMPAT_VERSION=~1
+
 RUN apk add --no-cache --update \
-    openjdk8-jre \
-    supervisor \
-    bash \
-    gcompat
+    "openjdk8-jre=${APK_OPENJDK8_VERSION}" \
+    "supervisor=${APK_SUPERVISOR_VERSION}" \
+    "bash=${APK_BASH_VERSION}" \
+    "gcompat=${APK_GCOMPAT_VERSION}"
 
 ARG ZOOKEEPER_VERSION=3.4.13
 
