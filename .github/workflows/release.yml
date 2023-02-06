@@ -2,13 +2,16 @@ name: Build Docker multiarch image on release
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - "main"
 
 env:
   REGISTRY: ghcr.io
   IMAGE_NAME: ${{ github.repository }}
 
 jobs:
-  build-and-push-image-multiarch:
+  bake-images:
     runs-on: ubuntu-22.04
     permissions:
       contents: read
