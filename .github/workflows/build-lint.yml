@@ -10,8 +10,9 @@ on:
       - "*"
     paths:
       - "!**"
-      - "Dockerfile"
-      - ".github/workflows/dockerfiles.yml"
+      - "./Dockerfile"
+      - ".github/workflows/**"
+      - "./assets/**"
 
 jobs:
   lint-dockerfiles:
@@ -36,3 +37,27 @@ jobs:
         with:
           dockerfile: ${{ matrix.dockerfile }}
           annotate: true
+
+  build-images:
+    runs-on: ubuntu-22.04
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3.2.0
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v2
+        with:
+          platforms: 'linux/arm64,linux/amd64'
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      - name: Build and push Docker images
+        uses: docker/bake-action@v2.3.0
+        with:
+          push: false
+          files: 'docker-bake.hcl'
