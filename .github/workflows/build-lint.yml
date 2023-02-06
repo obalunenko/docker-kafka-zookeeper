@@ -37,6 +37,7 @@ jobs:
         with:
           dockerfile: ${{ matrix.dockerfile }}
           annotate: true
+          error_level: 2
 
   build-images:
     runs-on: ubuntu-22.04
