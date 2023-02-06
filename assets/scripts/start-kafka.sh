@@ -10,70 +10,70 @@
 
 # Configure advertised host/port if we run in helios
 if [ ! -z "$HELIOS_PORT_kafka" ]; then
-    ADVERTISED_HOST=`echo $HELIOS_PORT_kafka | cut -d':' -f 1 | xargs -n 1 dig +short | tail -n 1`
-    ADVERTISED_PORT=`echo $HELIOS_PORT_kafka | cut -d':' -f 2`
+  ADVERTISED_HOST=$(echo $HELIOS_PORT_kafka | cut -d':' -f 1 | xargs -n 1 dig +short | tail -n 1)
+  ADVERTISED_PORT=$(echo $HELIOS_PORT_kafka | cut -d':' -f 2)
 fi
 
 # Set the external host and port
 if [ ! -z "$ADVERTISED_HOST_CMD" ]; then
-    export ADVERTISED_HOST=`eval $ADVERTISED_HOST_CMD`
+  export ADVERTISED_HOST=$(eval $ADVERTISED_HOST_CMD)
 fi
 
 if [ ! -z "$ADVERTISED_HOST" ]; then
-    echo "advertised host: $ADVERTISED_HOST"
-    # Uncomment advertised.listeners
-    sed -r -i 's/^(#)(advertised.listeners)/\2/g' $KAFKA_HOME/config/server.properties
+  echo "advertised host: $ADVERTISED_HOST"
+  # Uncomment advertised.listeners
+  sed -r -i 's/^(#)(advertised.listeners)/\2/g' $KAFKA_HOME/config/server.properties
 
-    # Replace your.host.name with $ADVERTISED_HOST
-    sed -r -i "s/your.host.name/$ADVERTISED_HOST/g" $KAFKA_HOME/config/server.properties
+  # Replace your.host.name with $ADVERTISED_HOST
+  sed -r -i "s/your.host.name/$ADVERTISED_HOST/g" $KAFKA_HOME/config/server.properties
 fi
 if [ ! -z "$ADVERTISED_PORT" ]; then
-    echo "advertised port: $ADVERTISED_PORT"
-    sed -r -i "s/#(advertised.port)=(.*)/\1=$ADVERTISED_PORT/g" $KAFKA_HOME/config/server.properties
+  echo "advertised port: $ADVERTISED_PORT"
+  sed -r -i "s/#(advertised.port)=(.*)/\1=$ADVERTISED_PORT/g" $KAFKA_HOME/config/server.properties
 fi
 
 if [ ! -z "$NUM_PARTITIONS" ]; then
-    echo "Num Partitions: $NUM_PARTITIONS"
-    sed -r -i "s/#(num.partitions)=(.*)/\1=$NUM_PARTITIONS/g" $KAFKA_HOME/config/server.properties
+  echo "Num Partitions: $NUM_PARTITIONS"
+  sed -r -i "s/#(num.partitions)=(.*)/\1=$NUM_PARTITIONS/g" $KAFKA_HOME/config/server.properties
 fi
 
 # Set the zookeeper chroot
 if [ ! -z "$ZK_CHROOT" ]; then
-    # wait for zookeeper to start up
-    until /usr/share/zookeeper/bin/zkServer.sh status; do
-      sleep 0.1
-    done
+  # wait for zookeeper to start up
+  until /usr/share/zookeeper/bin/zkServer.sh status; do
+    sleep 0.1
+  done
 
-    # create the chroot node
-    echo "create /$ZK_CHROOT \"\"" | /usr/share/zookeeper/bin/zkCli.sh || {
-        echo "can't create chroot in zookeeper, exit"
-        exit 1
-    }
+  # create the chroot node
+  echo "create /$ZK_CHROOT \"\"" | /usr/share/zookeeper/bin/zkCli.sh || {
+    echo "can't create chroot in zookeeper, exit"
+    exit 1
+  }
 
-    # configure kafka
-    sed -r -i "s/(zookeeper.connect)=(.*)/\1=localhost:2181\/$ZK_CHROOT/g" $KAFKA_HOME/config/server.properties
+  # configure kafka
+  sed -r -i "s/(zookeeper.connect)=(.*)/\1=localhost:2181\/$ZK_CHROOT/g" $KAFKA_HOME/config/server.properties
 fi
 
 # Allow specification of log retention policies
 if [ ! -z "$LOG_RETENTION_HOURS" ]; then
-    echo "log retention hours: $LOG_RETENTION_HOURS"
-    sed -r -i "s/(log.retention.hours)=(.*)/\1=$LOG_RETENTION_HOURS/g" $KAFKA_HOME/config/server.properties
+  echo "log retention hours: $LOG_RETENTION_HOURS"
+  sed -r -i "s/(log.retention.hours)=(.*)/\1=$LOG_RETENTION_HOURS/g" $KAFKA_HOME/config/server.properties
 fi
 if [ ! -z "$LOG_RETENTION_BYTES" ]; then
-    echo "log retention bytes: $LOG_RETENTION_BYTES"
-    sed -r -i "s/#(log.retention.bytes)=(.*)/\1=$LOG_RETENTION_BYTES/g" $KAFKA_HOME/config/server.properties
+  echo "log retention bytes: $LOG_RETENTION_BYTES"
+  sed -r -i "s/#(log.retention.bytes)=(.*)/\1=$LOG_RETENTION_BYTES/g" $KAFKA_HOME/config/server.properties
 fi
 
 # Configure the default number of log partitions per topic
 if [ ! -z "$NUM_PARTITIONS" ]; then
-    echo "default number of partition: $NUM_PARTITIONS"
-    sed -r -i "s/(num.partitions)=(.*)/\1=$NUM_PARTITIONS/g" $KAFKA_HOME/config/server.properties
+  echo "default number of partition: $NUM_PARTITIONS"
+  sed -r -i "s/(num.partitions)=(.*)/\1=$NUM_PARTITIONS/g" $KAFKA_HOME/config/server.properties
 fi
 
 # Enable/disable auto creation of topics
 if [ ! -z "$AUTO_CREATE_TOPICS" ]; then
-    echo "auto.create.topics.enable: $AUTO_CREATE_TOPICS"
-    echo "auto.create.topics.enable=$AUTO_CREATE_TOPICS" >> $KAFKA_HOME/config/server.properties
+  echo "auto.create.topics.enable: $AUTO_CREATE_TOPICS"
+  echo "auto.create.topics.enable=$AUTO_CREATE_TOPICS" >>$KAFKA_HOME/config/server.properties
 fi
 
 # Run Kafka
