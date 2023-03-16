@@ -10,10 +10,10 @@ on:
       - "*"
     paths:
       - "!**"
-      - "./Dockerfile"
+      - "Dockerfile"
       - ".github/workflows/**"
-      - "./assets/**"
-      - "./docker-bake.hcl"
+      - "assets/**"
+      - "docker-bake.hcl"
 
 jobs:
   lint-dockerfiles:
