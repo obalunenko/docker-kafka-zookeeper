@@ -18,6 +18,7 @@ Forked from [hey-johnnypark/docker-kafka-zookeeper](https://github.com/hey-johnn
 
 ## Kafka Versions
 
+Alll versions that listed on https://kafka.apache.org/downloads
 ### latest
 
 `docker pull ghcr.io/obalunenko/docker-kafka-zookeeper:latest`
@@ -38,7 +39,7 @@ ZOOKEEPER_VERSION 3.4.13
 
 SCALA_VERSION 2.13
 
-### v3.3.1
+### v3.4.0
 
 `docker pull ghcr.io/obalunenko/docker-kafka-zookeeper:v3.4.0`
 
@@ -48,31 +49,41 @@ ZOOKEEPER_VERSION 3.4.13
 
 SCALA_VERSION 2.13
 
-### v3.3.1
+### v3.3.2
 
-`docker pull ghcr.io/obalunenko/docker-kafka-zookeeper:v3.3.1`
+`docker pull ghcr.io/obalunenko/docker-kafka-zookeeper:v3.3.2`
 
-KAFKA_VERSION 3.3.1
-
-ZOOKEEPER_VERSION 3.4.13
-
-SCALA_VERSION 2.13
-
-### v3.2.0
-
-`docker pull ghcr.io/obalunenko/docker-kafka-zookeeper:v3.2.0`
-
-KAFKA_VERSION 3.2.0
+KAFKA_VERSION 3.3.2
 
 ZOOKEEPER_VERSION 3.4.13
 
 SCALA_VERSION 2.13
 
-### v3.1.0
+### v3.2.3
 
-`docker pull ghcr.io/obalunenko/docker-kafka-zookeeper:v3.1.0`
+`docker pull ghcr.io/obalunenko/docker-kafka-zookeeper:v3.2.3`
 
-KAFKA_VERSION 3.1.0
+KAFKA_VERSION 3.2.3
+
+ZOOKEEPER_VERSION 3.4.13
+
+SCALA_VERSION 2.13
+
+### v3.1.2
+
+`docker pull ghcr.io/obalunenko/docker-kafka-zookeeper:v3.1.2`
+
+KAFKA_VERSION 3.1.2
+
+ZOOKEEPER_VERSION 3.4.13
+
+SCALA_VERSION 2.13
+
+### v3.0.2
+
+`docker pull ghcr.io/obalunenko/docker-kafka-zookeeper:v3.0.2`
+
+KAFKA_VERSION 3.0.2
 
 ZOOKEEPER_VERSION 3.4.13
 
@@ -88,25 +99,145 @@ ZOOKEEPER_VERSION 3.4.13
 
 SCALA_VERSION 2.13
 
-### v2.7.0
+### v2.7.2
 
-`docker pull ghcr.io/obalunenko/docker-kafka-zookeeper:v2.7.0`
+`docker pull ghcr.io/obalunenko/docker-kafka-zookeeper:v2.7.2`
 
-KAFKA_VERSION 2.7.0
+KAFKA_VERSION 2.7.2
+
+ZOOKEEPER_VERSION 3.4.13
+
+SCALA_VERSION 2.13
+
+### v2.6.3
+
+`docker pull ghcr.io/obalunenko/docker-kafka-zookeeper:v2.6.3`
+
+KAFKA_VERSION 2.6.3
 
 ZOOKEEPER_VERSION 3.4.13
 
 SCALA_VERSION 2.13
 
-### v2.6.0
+### v2.5.1
 
-`docker pull ghcr.io/obalunenko/docker-kafka-zookeeper:v2.6.0`
+`docker pull ghcr.io/obalunenko/docker-kafka-zookeeper:v2.5.1`
 
-KAFKA_VERSION 2.6.0
+KAFKA_VERSION 2.5.1
 
 ZOOKEEPER_VERSION 3.4.13
 
 SCALA_VERSION 2.13
+
+### v2.4.1
+
+`docker pull ghcr.io/obalunenko/docker-kafka-zookeeper:v2.4.1`
+
+KAFKA_VERSION 2.4.1
+
+ZOOKEEPER_VERSION 3.4.13
+
+SCALA_VERSION 2.13
+
+### v2.3.1
+
+`docker pull ghcr.io/obalunenko/docker-kafka-zookeeper:v2.3.1`
+
+KAFKA_VERSION 2.3.1
+
+ZOOKEEPER_VERSION 3.4.13
+
+SCALA_VERSION 2.12
+
+### v2.2.2
+
+`docker pull ghcr.io/obalunenko/docker-kafka-zookeeper:v2.2.2`
+
+KAFKA_VERSION 2.2.2
+
+ZOOKEEPER_VERSION 3.4.13
+
+SCALA_VERSION 2.12
+
+### v2.1.1
+
+`docker pull ghcr.io/obalunenko/docker-kafka-zookeeper:v2.1.1`
+
+KAFKA_VERSION 2.1.1
+
+ZOOKEEPER_VERSION 3.4.13
+
+SCALA_VERSION 2.12
+
+### v2.0.1
+
+`docker pull ghcr.io/obalunenko/docker-kafka-zookeeper:v2.0.1`
+
+KAFKA_VERSION 2.0.1
+
+ZOOKEEPER_VERSION 3.4.13
+
+SCALA_VERSION 2.12
+
+### v1.1.1
+
+`docker pull ghcr.io/obalunenko/docker-kafka-zookeeper:v1.1.1`
+
+KAFKA_VERSION 1.1.1
+
+ZOOKEEPER_VERSION 3.4.13
+
+SCALA_VERSION 2.12
+
+### v1.0.2
+
+`docker pull ghcr.io/obalunenko/docker-kafka-zookeeper:v1.0.2`
+
+KAFKA_VERSION 1.0.2
+
+ZOOKEEPER_VERSION 3.4.13
+
+SCALA_VERSION 2.12
+
+### v0.11.0.3
+
+`docker pull ghcr.io/obalunenko/docker-kafka-zookeeper:v0.11.0.3`
+
+KAFKA_VERSION 0.11.0.3
+
+ZOOKEEPER_VERSION 3.4.13
+
+SCALA_VERSION 2.12
+
+### v0.10.2.2
+
+`docker pull ghcr.io/obalunenko/docker-kafka-zookeeper:v0.10.2.2`
+
+KAFKA_VERSION 0.10.2.2
+
+ZOOKEEPER_VERSION 3.4.13
+
+SCALA_VERSION 2.12
+
+### v0.9.0.1
+
+`docker pull ghcr.io/obalunenko/docker-kafka-zookeeper:v0.9.0.1`
+
+KAFKA_VERSION 0.9.0.1
+
+ZOOKEEPER_VERSION 3.4.13
+
+SCALA_VERSION 2.12
+
+### v0.8.2.2
+
+`docker pull ghcr.io/obalunenko/docker-kafka-zookeeper:v0.8.2.2`
+
+KAFKA_VERSION 0.8.2.2
+
+ZOOKEEPER_VERSION 3.4.13
+
+SCALA_VERSION 2.11
 
 ## Docker pool instuctions
 
