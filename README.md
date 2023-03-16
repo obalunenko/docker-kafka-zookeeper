@@ -16,6 +16,10 @@ Forked from [hey-johnnypark/docker-kafka-zookeeper](https://github.com/hey-johnn
 * LOG_RETENTION_BYTES: configure the size at which segments are pruned from the log, (default is 1073741824, for 1GB)
 * NUM_PARTITIONS: configure the default number of log partitions per topic
 
+## Docker pool instuctions
+
+https://github.com/obalunenko/docker-kafka-zookeeper/pkgs/container/docker-kafka-zookeeper
+
 ## Kafka Versions
 
 Alll versions that listed on https://kafka.apache.org/downloads
@@ -239,6 +243,3 @@ ZOOKEEPER_VERSION 3.4.13
 
 SCALA_VERSION 2.11
 
-## Docker pool instuctions
-
-https://github.com/obalunenko/docker-kafka-zookeeper/pkgs/container/docker-kafka-zookeeper
