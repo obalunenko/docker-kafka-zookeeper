@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  kafka:
+    image: ghcr.io/obalunenko/docker-kafka-zookeeper:latest
+    container_name: kafka
+    ports:
+      - "9092:9092"
+    environment:
+      AUTO_CREATE_TOPICS: true
+      ADVERTISED_HOST: kafka
+      ADVERTISED_PORT: 9092
+      ZK_CHROOT: kafka
+      LOG_RETENTION_HOURS: 168
+      LOG_RETENTION_BYTES: 1073741824
+      NUM_PARTITIONS: 2
