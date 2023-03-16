@@ -18,6 +18,10 @@ group "default" {
     "kafka-2_0",
     "kafka-1_1",
     "kafka-1_0",
+    "kafka-0_11",
+    "kafka-0_10",
+    "kafka-0_9",
+    "kafka-0_8"
   ]
 }
 
@@ -39,6 +43,58 @@ target "kafka_base" {
   platforms  = ["linux/amd64", "linux/arm64"]
 }
 
+target "kafka-0_8" {
+  inherits = ["kafka_base"]
+  args     = {
+    KAFKA_VERSION = "0.8.2.2"
+    SCALA_VERSION = "2.11"
+  }
+  tags = [
+    "${IMAGE_WITH_REGISTRY}:0.8.2.2",
+    "${IMAGE_WITH_REGISTRY}:v0.8.2.2",
+    "${IMAGE_WITH_REGISTRY}:0.8"
+  ]
+}
+
+target "kafka-0_9" {
+  inherits = ["kafka_base"]
+  args     = {
+    KAFKA_VERSION = "0.9.0.1"
+    SCALA_VERSION = "2.11"
+  }
+  tags = [
+    "${IMAGE_WITH_REGISTRY}:0.9.0.1",
+    "${IMAGE_WITH_REGISTRY}:v0.9.0.1",
+    "${IMAGE_WITH_REGISTRY}:0.9"
+  ]
+}
+
+target "kafka-0_10" {
+  inherits = ["kafka_base"]
+  args     = {
+    KAFKA_VERSION = "0.10.2.2"
+    SCALA_VERSION = "2.12"
+  }
+  tags = [
+    "${IMAGE_WITH_REGISTRY}:0.10.2.2",
+    "${IMAGE_WITH_REGISTRY}:v0.10.2.2",
+    "${IMAGE_WITH_REGISTRY}:0.10"
+  ]
+}
+
+target "kafka-0_11" {
+  inherits = ["kafka_base"]
+  args     = {
+    KAFKA_VERSION = "0.11.0.3"
+    SCALA_VERSION = "2.12"
+  }
+  tags = [
+    "${IMAGE_WITH_REGISTRY}:0.11.0.2",
+    "${IMAGE_WITH_REGISTRY}:v0.11.0.2",
+    "${IMAGE_WITH_REGISTRY}:0.11",
+    "${IMAGE_WITH_REGISTRY}:0"
+  ]
+}
 
 target "kafka-1_0" {
   inherits = ["kafka_base"]
