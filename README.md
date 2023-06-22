@@ -22,12 +22,13 @@ https://github.com/obalunenko/docker-kafka-zookeeper/pkgs/container/docker-kafka
 
 ## Kafka Versions
 
-Alll versions that listed on https://kafka.apache.org/downloads
+All versions that listed on https://kafka.apache.org/downloads
+
 ### latest
 
 `docker pull ghcr.io/obalunenko/docker-kafka-zookeeper:latest`
 
-KAFKA_VERSION 3.4.0
+KAFKA_VERSION 3.5.0
 
 ZOOKEEPER_VERSION 3.4.13
 
@@ -37,17 +38,27 @@ SCALA_VERSION 2.13
 
 `docker pull ghcr.io/obalunenko/docker-kafka-zookeeper:stable`
 
-KAFKA_VERSION 3.4.0
+KAFKA_VERSION 3.5.0
 
 ZOOKEEPER_VERSION 3.4.13
 
 SCALA_VERSION 2.13
 
-### v3.4.0
+### v3.5.0
 
-`docker pull ghcr.io/obalunenko/docker-kafka-zookeeper:v3.4.0`
+`docker pull ghcr.io/obalunenko/docker-kafka-zookeeper:v3.5.0`
 
-KAFKA_VERSION 3.4.0
+KAFKA_VERSION 3.5.0
+
+ZOOKEEPER_VERSION 3.4.13
+
+SCALA_VERSION 2.13
+
+### v3.4.1
+
+`docker pull ghcr.io/obalunenko/docker-kafka-zookeeper:v3.4.1`
+
+KAFKA_VERSION 3.4.1
 
 ZOOKEEPER_VERSION 3.4.13
 
