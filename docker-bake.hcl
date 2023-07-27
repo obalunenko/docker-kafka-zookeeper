@@ -309,12 +309,12 @@ target "kafka-3_4" {
 target "kafka-3_5" {
   inherits = ["kafka_base"]
   args     = {
-    KAFKA_VERSION = "3.5.0",
+    KAFKA_VERSION = "3.5.1",
     SCALA_VERSION = "2.13"
   }
   tags = [
-    "${IMAGE_WITH_REGISTRY}:3.5.0",
-    "${IMAGE_WITH_REGISTRY}:v3.5.0",
+    "${IMAGE_WITH_REGISTRY}:3.5.1",
+    "${IMAGE_WITH_REGISTRY}:v3.5.1",
   ]
 }
 
@@ -329,7 +329,7 @@ target "kafka-stable" {
 target "kafka-latest" {
   inherits = ["kafka_base"]
   args     = {
-    KAFKA_VERSION = "3.5.0",
+    KAFKA_VERSION = "3.5.1",
     SCALA_VERSION = "2.13"
   }
   tags = [
