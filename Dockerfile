@@ -1,5 +1,5 @@
 # Kafka and Zookeeper
-FROM alpine:3.18
+FROM alpine:3.19
 
 ARG APK_OPENJDK8_VERSION=~8
 ARG APK_SUPERVISOR_VERSION=~4
