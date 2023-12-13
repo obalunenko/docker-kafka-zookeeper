@@ -28,7 +28,7 @@ All versions that listed on https://kafka.apache.org/downloads
 
 `docker pull ghcr.io/obalunenko/docker-kafka-zookeeper:latest`
 
-KAFKA_VERSION 3.5.1
+KAFKA_VERSION 3.6.1
 
 ZOOKEEPER_VERSION 3.4.13
 
@@ -38,17 +38,27 @@ SCALA_VERSION 2.13
 
 `docker pull ghcr.io/obalunenko/docker-kafka-zookeeper:stable`
 
-KAFKA_VERSION 3.5.1
+KAFKA_VERSION 3.6.1
 
 ZOOKEEPER_VERSION 3.4.13
 
 SCALA_VERSION 2.13
 
-### v3.5.1
+### v3.6.1
 
-`docker pull ghcr.io/obalunenko/docker-kafka-zookeeper:v3.5.1`
+`docker pull ghcr.io/obalunenko/docker-kafka-zookeeper:v3.6.1`
 
-KAFKA_VERSION 3.5.1
+KAFKA_VERSION 3.6.1
+
+ZOOKEEPER_VERSION 3.4.13
+
+SCALA_VERSION 2.13
+
+### v3.5.2
+
+`docker pull ghcr.io/obalunenko/docker-kafka-zookeeper:v3.5.2`
+
+KAFKA_VERSION 3.5.2
 
 ZOOKEEPER_VERSION 3.4.13
 
