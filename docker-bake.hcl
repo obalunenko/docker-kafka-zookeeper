@@ -313,8 +313,9 @@ target "kafka-3_5" {
     SCALA_VERSION = "2.13"
   }
   tags = [
-    "${IMAGE_WITH_REGISTRY}:3.5.1",
-    "${IMAGE_WITH_REGISTRY}:v3.5.1",
+    "${IMAGE_WITH_REGISTRY}:3.5.2",
+    "${IMAGE_WITH_REGISTRY}:v3.5.2",
+    "${IMAGE_WITH_REGISTRY}:3.5",
   ]
 }
 
