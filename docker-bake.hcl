@@ -2,6 +2,8 @@ group "default" {
   targets = [
     "kafka-latest",
     "kafka-stable",
+    "kafka-3_7",
+    "kafka-3_6",
     "kafka-3_5",
     "kafka-3_4",
     "kafka-3_3",
@@ -328,12 +330,25 @@ target "kafka-3_6" {
   tags = [
     "${IMAGE_WITH_REGISTRY}:3.6.1",
     "${IMAGE_WITH_REGISTRY}:v3.6.1",
+    "${IMAGE_WITH_REGISTRY}:v3.6",
+  ]
+}
+
+target "kafka-3_7" {
+  inherits = ["kafka_base"]
+  args     = {
+    KAFKA_VERSION = "3.7.0",
+    SCALA_VERSION = "2.13"
+  }
+  tags = [
+    "${IMAGE_WITH_REGISTRY}:3.7.0",
+    "${IMAGE_WITH_REGISTRY}:v3.7.0",
   ]
 }
 
 
 target "kafka-stable" {
-  inherits = ["kafka-3_6"]
+  inherits = ["kafka-3_7"]
   tags     = [
     "${IMAGE_WITH_REGISTRY}:stable",
   ]
@@ -342,12 +357,12 @@ target "kafka-stable" {
 target "kafka-latest" {
   inherits = ["kafka_base"]
   args     = {
-    KAFKA_VERSION = "3.6.1",
+    KAFKA_VERSION = "3.7.0",
     SCALA_VERSION = "2.13"
   }
   tags = [
     "${IMAGE_WITH_REGISTRY}:latest",
     "${IMAGE_WITH_REGISTRY}:3",
-    "${IMAGE_WITH_REGISTRY}:3.6",
+    "${IMAGE_WITH_REGISTRY}:3.7",
   ]
 }
