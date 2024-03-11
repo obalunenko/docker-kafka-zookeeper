@@ -44,6 +44,11 @@ target "kafka_base" {
   dockerfile = "Dockerfile"
   context    = "."
   platforms  = ["linux/amd64", "linux/arm64"]
+  labels = {
+    "org.opencontainers.image.source"  = "https://github.com/obalunenko/docker-kafka-zookeeper"
+    "org.opencontainers.image.authors" = "Oleg Balunenko <oleg.balunenko@gmail.com>"
+    "org.opencontainers.image.title"   = "Kafka and Zookeeper"
+  }
 }
 
 target "kafka-0_8" {
