@@ -355,12 +355,12 @@ target "kafka-3_7" {
 target "kafka-3_8" {
   inherits = ["kafka_base"]
   args     = {
-    KAFKA_VERSION = "3.8.0",
+    KAFKA_VERSION = "3.8.1",
     SCALA_VERSION = "2.13"
   }
   tags = [
-    "${IMAGE_WITH_REGISTRY}:3.8.0",
-    "${IMAGE_WITH_REGISTRY}:v3.8.0",
+    "${IMAGE_WITH_REGISTRY}:3.8.1",
+    "${IMAGE_WITH_REGISTRY}:v3.8.1",
   ]
 }
 
