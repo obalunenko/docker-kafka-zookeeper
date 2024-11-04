@@ -13,10 +13,10 @@ Forked from [hey-johnnypark/docker-kafka-zookeeper](https://github.com/hey-johnn
 * ADVERTISED_PORT: the external port for Kafka, e.g. 9092
 * ZK_CHROOT: the zookeeper chroot that's used by Kafka (without / prefix), e.g. "kafka"
 * LOG_RETENTION_HOURS: the minimum age of a log file in hours to be eligible for deletion (default is 168, for 1 week)
-* LOG_RETENTION_BYTES: configure the size at which segments are pruned from the log, (default is 1073741824, for 1GB)
+* LOG_RETENTION_BYTES: configure the size at which segments are pruned from the log (default is 1073741824, for 1GB)
 * NUM_PARTITIONS: configure the default number of log partitions per topic
 
-## Docker pool instuctions
+## Docker pool instructions
 
 https://github.com/obalunenko/docker-kafka-zookeeper/pkgs/container/docker-kafka-zookeeper
 
@@ -28,7 +28,7 @@ All versions listed on https://kafka.apache.org/downloads
 
 `docker pull ghcr.io/obalunenko/docker-kafka-zookeeper:latest`
 
-KAFKA_VERSION 3.8.0
+KAFKA_VERSION 3.8.1
 
 ZOOKEEPER_VERSION 3.4.13
 
@@ -44,11 +44,11 @@ ZOOKEEPER_VERSION 3.4.13
 
 SCALA_VERSION 2.13
 
-### v3.8.0
+### v3.8.1
 
-`docker pull ghcr.io/obalunenko/docker-kafka-zookeeper:v3.8.0`
+`docker pull ghcr.io/obalunenko/docker-kafka-zookeeper:v3.8.1`
 
-KAFKA_VERSION 3.8.0
+KAFKA_VERSION 3.8.1
 
 ZOOKEEPER_VERSION 3.4.13
 
