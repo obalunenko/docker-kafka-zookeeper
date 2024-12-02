@@ -2,6 +2,7 @@ group "default" {
   targets = [
     "kafka-latest",
     "kafka-stable",
+    "kafka-3_9",
     "kafka-3_8",
     "kafka-3_7",
     "kafka-3_6",
@@ -364,18 +365,30 @@ target "kafka-3_8" {
   ]
 }
 
+target "kafka-3_9" {
+  inherits = ["kafka_base"]
+  args     = {
+    KAFKA_VERSION = "3.9.0",
+    SCALA_VERSION = "2.13"
+  }
+  tags = [
+    "${IMAGE_WITH_REGISTRY}:3.9.0",
+    "${IMAGE_WITH_REGISTRY}:v3.9.0",
+  ]
+}
+
 target "kafka-stable" {
-  inherits = ["kafka-3_7"]
+  inherits = ["kafka-3_8"]
   tags     = [
     "${IMAGE_WITH_REGISTRY}:stable",
   ]
 }
 
 target "kafka-latest" {
-  inherits = ["kafka-3_8"]
+  inherits = ["kafka-3_9"]
   tags = [
     "${IMAGE_WITH_REGISTRY}:latest",
     "${IMAGE_WITH_REGISTRY}:3",
-    "${IMAGE_WITH_REGISTRY}:3.8",
+    "${IMAGE_WITH_REGISTRY}:3.9",
   ]
 }
